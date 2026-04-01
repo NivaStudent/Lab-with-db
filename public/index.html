@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Dashboard</title>
+</head>
+<body>
+
+<h1>Smart Dashboard</h1>
+
+<script type="module">
+  import { registerUser, loginUser } from "/src/core/authService.js";
+
+  window.registerUser = registerUser;
+  window.loginUser = loginUser;
+</script>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/serviceWorker.js");
+  }
+</script>
+
+</body>
+</html>
